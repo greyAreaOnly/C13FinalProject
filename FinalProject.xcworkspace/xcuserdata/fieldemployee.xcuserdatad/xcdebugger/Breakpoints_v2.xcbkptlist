@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8E968C9D-6A36-4310-BB49-F74A460AF0CE"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4482B1D-D9D4-41AC-ACB0-CF816BC3D84F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinalProject/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "getData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F4482B1D-D9D4-41AC-ACB0-CF816BC3D84F - 395aae03dc9d8b06"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FinalProject.NetworkManager.getData() -&gt; ()"
+                  moduleName = "FinalProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fieldemployee/Desktop/C13FinalProject/FinalProject/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "1332">
+               </Location>
+               <Location
+                  uuid = "F4482B1D-D9D4-41AC-ACB0-CF816BC3D84F - f861deece49915d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in FinalProject.NetworkManager.getData() -&gt; ()"
+                  moduleName = "FinalProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fieldemployee/Desktop/C13FinalProject/FinalProject/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "2108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
