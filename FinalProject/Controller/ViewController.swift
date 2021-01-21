@@ -13,6 +13,18 @@ class ViewController: UIViewController {
     
     var matches = [Match]()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getData()
+        // Do any additional setup after loading the view.
+        // test file location
+    }
+    
+    func viewWillAppear() {
+    
+    }
+    
+    
     func getData() {
         let token = "80980820efe24ed2a3b7c15237187477"
         //let url = URL(string: "https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED")!
@@ -40,7 +52,7 @@ class ViewController: UIViewController {
 //                    print("\(homeScore)")
 //                    print("\(winner)")
 //                    print("\(status)")
-                    print(matchResult)
+  //                  print(matchResult)
                     //print("\(crestURL)")
                     }
                 //print(matchday)
@@ -49,18 +61,6 @@ class ViewController: UIViewController {
         }
         task.resume()
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        getData()
-        // Do any additional setup after loading the view.
-        // test file location
-    }
-    
-    func viewWillAppear() {
-    
-    }
-
 
 }
 
