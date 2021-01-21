@@ -29,10 +29,11 @@ class FixtureViewController : UIViewController {
     func getData() {
         let token = "80980820efe24ed2a3b7c15237187477"
         //let url = URL(string: "https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED")!
-        let url = URL(string: "https://api.football-data.org/v2/competitions/PD/matches?status=SCHEDULED&dateFrom=2021-01-10&dateTo=2021-01-25")!
+//        let url = URL(string: "https://api.football-data.org/v2/competitions/PD/matches?status=SCHEDULED&dateFrom=2021-01-10&dateTo=2021-01-25")!
+        let url = URL(string: urlFromTable)!
 //        let url = URL(string: "https://api.football-data.org/v2/competitions/CL/teams")!
+//        var request = URLRequest(url: url)
         var request = URLRequest(url: url)
-//        var request = URLRequest(url: urlFromTable)
         request.addValue(token, forHTTPHeaderField: "X-Auth-Token")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -59,7 +60,6 @@ class FixtureViewController : UIViewController {
                     }
                 //print(matchday)
                 }
-                
         }
         task.resume()
     }
