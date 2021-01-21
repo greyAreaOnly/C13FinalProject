@@ -29,7 +29,10 @@ class fixtureTableViewCell: UITableViewCell {
     }
     
     func configure(with match: Match){
-        
+        self.homeTeam.text = match.homeTeam
+        self.homeScore.text = String(match.homeScore)
+        self.awayTeam.text = match.awayTeam
+        self.awayScore.text = String(match.awayScore)
     }
     
 }

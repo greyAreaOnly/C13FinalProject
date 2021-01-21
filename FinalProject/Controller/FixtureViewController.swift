@@ -9,24 +9,19 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-
-
 class FixtureViewController : UIViewController {
    
+    @IBOutlet weak var fixtureTableView: UITableView!
+    
     //MARK: - Variables
-
     var matches = [Match]()
     var urlFromTable = ""
     
-    @IBOutlet weak var fixtureTableView: UITableView!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
         fixtureTableView.dataSource = self
         fixtureTableView.register(UINib(nibName: "fixtureTableViewCell", bundle: nil), forCellReuseIdentifier: "fixtureCell")
-
-        getData()
     }
     
     func getData() {
@@ -92,10 +87,9 @@ extension FixtureViewController: UITableViewDataSource{
         return self.matches.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-    
+
         let cell = fixtureTableView.dequeueReusableCell(withIdentifier: "fixtureCell", for: indexPath) as! fixtureTableViewCell
-        let match = self.matches[indexPath.row]
+        cell.configure(with: self.matches[indexPath.row])
         return cell
         }
     }
