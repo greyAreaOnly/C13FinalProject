@@ -23,6 +23,9 @@ class FixtureViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fixtureTableView.dataSource = self
+        fixtureTableView.register(UINib(nibName: "fixtureTableViewCell", bundle: nil), forCellReuseIdentifier: "fixtureCell")
+
         getData()
     }
     
@@ -91,8 +94,8 @@ extension FixtureViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
     
-        let cell = tableView.dequeueReusableCell(withIdentifier: "fixtureTableViewCell", for: indexPath) as! fixtureTableViewCell
-                cell.configure(with: self.matches[indexPath.row])
+        let cell = fixtureTableView.dequeueReusableCell(withIdentifier: "fixtureCell", for: indexPath) as! fixtureTableViewCell
+        let match = self.matches[indexPath.row]
         return cell
         }
     }

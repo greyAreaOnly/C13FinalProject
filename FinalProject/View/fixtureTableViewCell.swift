@@ -9,6 +9,14 @@ import UIKit
 
 class fixtureTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var homeTeam: UILabel!
+    @IBOutlet weak var homeScore: UILabel!
+    
+    @IBOutlet weak var awayTeam: UILabel!
+    @IBOutlet weak var awayScore: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
