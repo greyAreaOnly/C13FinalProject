@@ -11,6 +11,20 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     
+    var matches = [Match]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getData()
+        // Do any additional setup after loading the view.
+        // test file location
+    }
+    
+    func viewWillAppear() {
+    
+    }
+    
+    
     func getData() {
         let token = "80980820efe24ed2a3b7c15237187477"
         //let url = URL(string: "https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED")!
@@ -23,29 +37,30 @@ class ViewController: UIViewController {
             let json = try? JSON(data: data!)
             if let matchday = json?["matches"] {
                 for match in matchday {
-                    let teamName = match.1["name"]
-                    let crestURL = match.1["crestUrl"]
-                    print("\(teamName)")
-                    print("\(crestURL)")
+                    let awayTeam = match.1["awayTeam"]["name"].stringValue
+                    let homeTeam = match.1["homeTeam"]["name"].stringValue
+                    let awayScore = match.1["score"]["fullTime"]["awayTeam"].intValue
+                    let homeScore = match.1["score"]["fullTime"]["homeTeam"].intValue
+                    let winner = match.1["score"]["winner"].stringValue
+                    let status = match.1["status"].stringValue
+                    //let crestURL = match.1["crestUrl"]
+                    let matchResult = Match(awayScore: awayScore, homeScore: homeScore, awayTeam: awayTeam, homeTeam: homeTeam, winner: winner, status: status)
+                    self.matches.append(matchResult)
+//                    print("\(awayTeam)")
+//                    print("\(awayScore)")
+//                    print("\(homeTeam)")
+//                    print("\(homeScore)")
+//                    print("\(winner)")
+//                    print("\(status)")
+  //                  print(matchResult)
+                    //print("\(crestURL)")
                     }
-                print(matchday)
+                //print(matchday)
                 }
                 
         }
         task.resume()
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        getData()
-        // Do any additional setup after loading the view.
-        // test file location
-    }
-    
-    func viewWillAppear() {
-    
-    }
-
 
 }
 
