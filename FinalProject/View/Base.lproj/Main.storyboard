@@ -132,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vmx-bK-h1B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2589.8550724637685" y="-24.107142857142858"/>
+            <point key="canvasLocation" x="2577" y="-71"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="faH-3F-uqw">
@@ -257,7 +257,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XcS-T9-tQb"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
                             <constraint firstItem="LLh-KA-rjj" firstAttribute="top" secondItem="XcS-T9-tQb" secondAttribute="top" constant="100" id="Hvk-vc-W8E"/>
                             <constraint firstItem="XcS-T9-tQb" firstAttribute="bottom" secondItem="LLh-KA-rjj" secondAttribute="bottom" constant="100" id="KHH-HY-Gia"/>
@@ -266,15 +266,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0y6-zK-qU9"/>
+                    <connections>
+                        <outlet property="leagueTableView" destination="LLh-KA-rjj" id="4j6-yR-UaK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jpy-HA-aEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4226" y="-24"/>
+            <point key="canvasLocation" x="4135" y="-71"/>
         </scene>
         <!--Fixture View Controller-->
         <scene sceneID="w5X-q9-xt8">
             <objects>
-                <viewController id="C5w-82-Ibe" customClass="FixtureViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FixtureViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C5w-82-Ibe" customClass="FixtureViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lhM-q4-daG">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4y0-Hb-Mf0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5040" y="-23"/>
+            <point key="canvasLocation" x="5038" y="-71"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1kF-QY-YmK">
@@ -302,16 +305,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Avu-9x-BmI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1679.7101449275362" y="-24.107142857142858"/>
+            <point key="canvasLocation" x="1658" y="-71"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uKy-RG-XDf"/>
+        <segue reference="7sT-Yc-aZH"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="images" width="225" height="225"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
