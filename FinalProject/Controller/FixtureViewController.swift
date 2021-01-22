@@ -13,7 +13,9 @@ class FixtureViewController : UIViewController {
    
     @IBOutlet weak var fixtureTableView: UITableView!
     
-    @IBOutlet weak var leagueName: UILabel!
+    @IBOutlet weak var scheduledLabel: UILabel!
+    @IBOutlet weak var finishedLabel: UILabel!
+    
     //MARK: - Variables
     
     var matches = [Match]() //{
@@ -52,7 +54,7 @@ class FixtureViewController : UIViewController {
                     let homeScore = match.1["score"]["fullTime"]["homeTeam"].intValue
                     let winner = match.1["score"]["winner"].stringValue
                     let status = match.1["status"].stringValue
-                    let crestURL = match.1["crestUrl"]
+//                    let crestURL = match.1["crestUrl"]
                     let matchResult = Match(awayScore: awayScore, homeScore: homeScore, awayTeam: awayTeam, homeTeam: homeTeam, winner: winner, status: status)
                     DispatchQueue.main.async {
                         self.matches.append(matchResult)
@@ -95,9 +97,6 @@ extension JSON {
 
 extension FixtureViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print(self.matches)
-        print("******fixture count : \(matches.count)")
-
         return self.matches.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -46,10 +46,12 @@ extension LeagueViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //    var initialValue: String
+    
+    
     switch indexPath.row {
     case 0:
         let fixtureVC = storyboard.instantiateViewController(identifier: "FixtureViewController") as! FixtureViewController
-        fixtureVC.urlFromTable = "https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED&dateFrom=2021-01-10&dateTo=2021-01-25"
+        fixtureVC.urlFromTable = "https://api.football-data.org/v2/competitions/PL/matches?status=FINISHED&dateFrom=2021-01-10&dateTo=2021-01-25"
         self.navigationController?.pushViewController(fixtureVC, animated: true)
     case 1:
         let fixtureVC = storyboard.instantiateViewController(identifier: "FixtureViewController") as! FixtureViewController
