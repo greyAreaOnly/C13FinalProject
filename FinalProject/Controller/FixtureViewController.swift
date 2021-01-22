@@ -13,24 +13,27 @@ class FixtureViewController : UIViewController {
    
     @IBOutlet weak var fixtureTableView: UITableView!
     
-    @IBOutlet weak var scheduledLabel: UILabel!
-    @IBOutlet weak var finishedLabel: UILabel!
-    
+
+    @IBOutlet weak var finishedButton: UIButton!
+
+    @IBOutlet weak var scheduledButton: UIButton!
     //MARK: - Variables
     
-    var matches = [Match]() //{
+    var matches = [Match]() //{ option to use property observer
 //        didSet{
 //            fixtureTableView?.reloadData()
 //        }
 //    }
     var urlFromTable = ""
-    
+ //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         fixtureTableView.dataSource = self
         fixtureTableView.register(UINib(nibName: "fixtureTableViewCell", bundle: nil), forCellReuseIdentifier: "fixtureCell")
         
         getData()
+        print ("******************* URL is: \(self.urlFromTable) *****************************")
+
 
     }
     
@@ -68,12 +71,18 @@ class FixtureViewController : UIViewController {
 //                    print("\(winner)")
 //                    print("\(status)")
                     print(matchResult)
+
 //                    print("\(crestURL)")
                     }
 //                print(matchday)
                 }
         }
         task.resume()
+    }
+    
+    //MARK: - Actions Items
+    @IBAction func finishedButtonPressed(_ sender: Any) {
+        
     }
 }
 
@@ -100,9 +109,16 @@ extension FixtureViewController: UITableViewDataSource{
         return self.matches.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = fixtureTableView.dequeueReusableCell(withIdentifier: "fixtureCell", for: indexPath) as! fixtureTableViewCell
         cell.configure(with: self.matches[indexPath.row])
         return cell
         }
     }
+
+extension FixtureViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
+    }
+}

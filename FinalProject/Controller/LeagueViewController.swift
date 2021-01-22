@@ -55,24 +55,24 @@ extension LeagueViewController: UITableViewDelegate {
         self.navigationController?.pushViewController(fixtureVC, animated: true)
     case 1:
         let fixtureVC = storyboard.instantiateViewController(identifier: "FixtureViewController") as! FixtureViewController
-        fixtureVC.urlFromTable = "https://api.football-data.org/v2/competitions/PD/matches?status=SCHEDULED&dateFrom=2021-01-10&dateTo=2021-01-25"
+        fixtureVC.urlFromTable = "https://api.football-data.org/v2/competitions/PD/matches?status=FINISHED&dateFrom=2021-01-10&dateTo=2021-01-25"
         self.navigationController?.pushViewController(fixtureVC, animated: true)
     case 2:
         let fixtureVC = storyboard.instantiateViewController(identifier: "FixtureViewController") as! FixtureViewController
-        fixtureVC.urlFromTable = "https://api.football-data.org/v2/competitions/SA/matches?status=SCHEDULED&dateFrom=2021-01-10&dateTo=2021-01-25"
+        fixtureVC.urlFromTable = "https://api.football-data.org/v2/competitions/SA/matches?status=FINISHED&dateFrom=2021-01-10&dateTo=2021-01-25"
         self.navigationController?.pushViewController(fixtureVC, animated: true)
     case 3:
         let fixtureVC = storyboard.instantiateViewController(identifier: "FixtureViewController") as! FixtureViewController
-        fixtureVC.urlFromTable = "https://api.football-data.org/v2/competitions/BL1/matches?status=SCHEDULED&dateFrom=2021-01-10&dateTo=2021-01-25"
+        fixtureVC.urlFromTable = "https://api.football-data.org/v2/competitions/BL1/matches?status=FINISHED&dateFrom=2021-01-10&dateTo=2021-01-25"
         self.navigationController?.pushViewController(fixtureVC, animated: true)
     case 4:
         let fixtureVC = storyboard.instantiateViewController(identifier: "FixtureViewController") as! FixtureViewController
-        fixtureVC.urlFromTable = "https://api.football-data.org/v2/competitions/FL1/matches?status=SCHEDULED&dateFrom=2021-01-10&dateTo=2021-01-25"
+        fixtureVC.urlFromTable = "https://api.football-data.org/v2/competitions/FL1/matches?status=FINISHED&dateFrom=2021-01-10&dateTo=2021-01-25"
         self.navigationController?.pushViewController(fixtureVC, animated: true)
  
     default:
         let fixtureVC = storyboard.instantiateViewController(identifier: "FixtureViewController") as! FixtureViewController
-        fixtureVC.urlFromTable = "https://api.football-data.org/v2/competitions/DED/matches?status=SCHEDULED&dateFrom=2021-01-10&dateTo=2021-01-25"
+        fixtureVC.urlFromTable = "https://api.football-data.org/v2/competitions/DED/matches?status=FINISHED&dateFrom=2021-01-10&dateTo=2021-01-25"
         self.navigationController?.pushViewController(fixtureVC, animated: true)
     }
   }
