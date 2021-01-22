@@ -9,6 +9,6 @@ target 'FinalProject' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'SwiftyJSON', '~> 4.0'
-  
+  pod 'IQKeyboardManagerSwift'
 
 end

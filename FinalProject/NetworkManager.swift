@@ -22,26 +22,26 @@ final class NetworkManager {
     private init(){}
     var delegate = NetworkManagerDelegate.self
     
-    func getData() {
-        let session = URLSession.shared
-        let url = URL(string: "http://api.football-data.org/v2/competitions/PL")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("80980820efe24ed2a3b7c15237187477", forHTTPHeaderField: "X-Auth-Token")
-        print("GetData started")
-        let task = session.dataTask(with: url) { data, response, error in
-            if error != nil || data != nil {
-                print("\(error?.localizedDescription ?? "Error")")
-            }
-            do {
-                let uploadTask = session.uploadTask(with: request, from: data!) { data, response, error in
-                    var json = try? JSON(data: data!)
-                    print(json)
-                }.resume()
-            } catch {
-                print("Json error")
-            }
-        
+//    func getData() {
+//        let session = URLSession.shared
+//        let url = URL(string: "http://api.football-data.org/v2/competitions/PL")!
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "GET"
+//        request.setValue("80980820efe24ed2a3b7c15237187477", forHTTPHeaderField: "X-Auth-Token")
+//        print("GetData started")
+//        let task = session.dataTask(with: url) { data, response, error in
+//            if error != nil || data != nil {
+//                print("\(error?.localizedDescription ?? "Error")")
+//            }
+//            do {
+//                let uploadTask = session.uploadTask(with: request, from: data!) { data, response, error in
+//                    var json = try? JSON(data: data!)
+//                    print(json)
+//                }.resume()
+//            } catch {
+//                print("Json error")
+//            }
+//
         
         
 //        print("Get Data started")
@@ -60,8 +60,8 @@ final class NetworkManager {
 //            //} catch {
                // print(error.localizedDescription)
            // }
-        }.resume()
-    }
+//        }.resume()
+//    }
     
 //    func getDecodedObject<T: Decodable>(from urlString: String, completion: @escaping (T?,Error?) -> Void) {
 //        guard let url = URL(string: urlString) else {
