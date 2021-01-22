@@ -44,6 +44,11 @@ class fixtureTableViewCell: UITableViewCell {
 
             }
         }
+        else{
+            self.homeTeam.backgroundColor = UIColor.systemBackground
+            self.homeTeam.backgroundColor = UIColor.systemBackground
+
+        }
     }
     
 }
