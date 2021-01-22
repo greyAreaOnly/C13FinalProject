@@ -13,21 +13,25 @@ class FixtureViewController : UIViewController {
    
     @IBOutlet weak var fixtureTableView: UITableView!
     
-
+    @IBOutlet weak var selectedTab: UILabel!
+    
     @IBOutlet weak var finishedButton: UIButton!
 
     @IBOutlet weak var scheduledButton: UIButton!
+    var league = ""
     //MARK: - Variables
     
-    var matches = [Match]() //{ option to use property observer
+    var matches : [Match]? = [Match]() //{ option to use property observer
 //        didSet{
 //            fixtureTableView?.reloadData()
 //        }
 //    }
     var urlFromTable = ""
+    var todaysDate = Date()
  //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedTab.text = "Finished"
         fixtureTableView.dataSource = self
         fixtureTableView.register(UINib(nibName: "fixtureTableViewCell", bundle: nil), forCellReuseIdentifier: "fixtureCell")
         
@@ -60,8 +64,10 @@ class FixtureViewController : UIViewController {
 //                    let crestURL = match.1["crestUrl"]
                     let matchResult = Match(awayScore: awayScore, homeScore: homeScore, awayTeam: awayTeam, homeTeam: homeTeam, winner: winner, status: status)
                     DispatchQueue.main.async {
-                        self.matches.append(matchResult)
-                        self.fixtureTableView.insertRows(at: [IndexPath(row: self.matches.count-1, section: 0)], with: .fade)
+                        self.fixtureTableView.reloadData()
+                        self.matches?.append(matchResult)
+                        self.fixtureTableView.insertRows(at: [IndexPath(row: self.matches!.count-1 , section: 0)], with: .fade)
+                        self.fixtureTableView.reloadData()
                     }
 //                    print("Match Array: \(self.matches)")
 //                    print("\(matchResult.awayTeam)")
@@ -82,7 +88,33 @@ class FixtureViewController : UIViewController {
     
     //MARK: - Actions Items
     @IBAction func finishedButtonPressed(_ sender: Any) {
-        
+        //change url
+        // reload table
+        let status = "FINISHED"
+        let todaysFormattedDate = todaysDate.getFormattedDate(format: "yyyy-MM-dd")
+        urlFromTable = "https://api.football-data.org/v2/competitions/\(league)/matches?status=\(status)&dateFrom=2021-01-10&dateTo=\(todaysFormattedDate)"
+        selectedTab.text = "Finished"
+        matches?.removeAll()
+        getData()
+    }
+    
+    @IBAction func scheduledButtonPressed(_ sender: Any) {
+        let status = "SCHEDULED"
+        let todaysFormattedDate = todaysDate.getFormattedDate(format: "yyyy-MM-dd")
+        urlFromTable = "https://api.football-data.org/v2/competitions/\(league)/matches?status=\(status)&dateFrom=\(todaysFormattedDate)&dateTo=2021-01-31"
+        selectedTab.text = "Scheduled"
+        matches?.removeAll()
+        getData()
+    }
+    
+    @IBAction func liveButtonPressed(_ sender: Any) {
+        let status = "IN_PLAY"
+        let todaysFormattedDate = todaysDate.getFormattedDate(format: "yyyy-MM-dd")
+        urlFromTable = "https://api.football-data.org/v2/competitions/\(league)/matches?status=\(status)&dateFrom=\(todaysFormattedDate)&dateTo=2021-01-31"
+        selectedTab.text = "Live"
+        matches?.removeAll()
+        fixtureTableView.reloadData()
+        getData()
     }
 }
 
@@ -106,11 +138,13 @@ extension JSON {
 
 extension FixtureViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.matches.count
+        return self.matches?.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = fixtureTableView.dequeueReusableCell(withIdentifier: "fixtureCell", for: indexPath) as! fixtureTableViewCell
-        cell.configure(with: self.matches[indexPath.row])
+        if (matches?.isEmpty != true) {
+            cell.configure(with: (self.matches?[indexPath.row])!)
+        }
         return cell
         }
     }

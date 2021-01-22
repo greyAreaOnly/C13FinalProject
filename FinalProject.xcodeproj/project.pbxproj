@@ -19,7 +19,6 @@
 		3A4E24B525BA0CA000A374E7 /* FixtureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E24B425BA0CA000A374E7 /* FixtureViewController.swift */; };
 		3A4E24BA25BA16D800A374E7 /* leagueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E24B825BA16D800A374E7 /* leagueTableViewCell.swift */; };
 		3A4E24BB25BA16D800A374E7 /* leagueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E24B925BA16D800A374E7 /* leagueTableViewCell.xib */; };
-		3A57EDDD25B8F09C002D5E1C /* LoginDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57EDDC25B8F09C002D5E1C /* LoginDesign.swift */; };
 		3A57EE5025B938C2002D5E1C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A57EE4F25B938C2002D5E1C /* GoogleService-Info.plist */; };
 		3A57EE5325B93D2F002D5E1C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57EE5225B93D2F002D5E1C /* SignupViewController.swift */; };
 		3A57EE5925B95A8A002D5E1C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57EE5825B95A8A002D5E1C /* LoginViewController.swift */; };
@@ -44,7 +43,6 @@
 		3A4E24B425BA0CA000A374E7 /* FixtureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViewController.swift; sourceTree = "<group>"; };
 		3A4E24B825BA16D800A374E7 /* leagueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leagueTableViewCell.swift; sourceTree = "<group>"; };
 		3A4E24B925BA16D800A374E7 /* leagueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = leagueTableViewCell.xib; sourceTree = "<group>"; };
-		3A57EDDC25B8F09C002D5E1C /* LoginDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDesign.swift; sourceTree = "<group>"; };
 		3A57EE4F25B938C2002D5E1C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A57EE5225B93D2F002D5E1C /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		3A57EE5825B95A8A002D5E1C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 				3A57EE4F25B938C2002D5E1C /* GoogleService-Info.plist */,
 				3A4E23F625B691C500A374E7 /* NetworkManager.swift */,
 				3A4E237325B671A800A374E7 /* FinalProject.xcdatamodeld */,
-				3A57EDDC25B8F09C002D5E1C /* LoginDesign.swift */,
 				3A57EE7125B96504002D5E1C /* Alert.swift */,
 			);
 			path = FinalProject;
@@ -277,7 +274,6 @@
 				3A57EE5325B93D2F002D5E1C /* SignupViewController.swift in Sources */,
 				3A4E23F725B691C500A374E7 /* NetworkManager.swift in Sources */,
 				3A4E237525B671A800A374E7 /* FinalProject.xcdatamodeld in Sources */,
-				3A57EDDD25B8F09C002D5E1C /* LoginDesign.swift in Sources */,
 				3A4E24BA25BA16D800A374E7 /* leagueTableViewCell.swift in Sources */,
 				3A4E236D25B671A800A374E7 /* SceneDelegate.swift in Sources */,
 				3A57EE5925B95A8A002D5E1C /* LoginViewController.swift in Sources */,
