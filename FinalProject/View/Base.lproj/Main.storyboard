@@ -281,13 +281,75 @@
                     <view key="view" contentMode="scaleToFill" id="lhM-q4-daG">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uc9-1v-Tr8">
+                                <rect key="frame" x="20" y="150" width="350" height="585"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="C6f-ur-hsk"/>
+                                    <constraint firstAttribute="height" constant="585" id="vHY-yK-SXX"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFm-tv-ekh">
+                                <rect key="frame" x="15" y="760" width="120" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NvU-oZ-3Gj"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="Pfw-KN-nm5"/>
+                                </constraints>
+                                <state key="normal" title="Finished"/>
+                                <connections>
+                                    <action selector="finishedButtonPressed:" destination="C5w-82-Ibe" eventType="touchUpInside" id="gFE-vg-M3g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6W-zf-045">
+                                <rect key="frame" x="255" y="760" width="120" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cRG-o2-Ihg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="eL8-r8-Ru9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mL8-gn-wfU">
+                                <rect key="frame" x="135" y="760" width="120" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="49y-5d-mVP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="bxU-yN-ZFu"/>
+                                </constraints>
+                                <state key="normal" title="Scheduled"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="zth-ud-16m"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstItem="mL8-gn-wfU" firstAttribute="leading" secondItem="QFm-tv-ekh" secondAttribute="trailing" constant="-0.11336032388771855" id="4o9-8Q-knT"/>
+                            <constraint firstItem="mL8-gn-wfU" firstAttribute="leading" secondItem="QFm-tv-ekh" secondAttribute="trailing" constant="-0.11336032388771855" id="4yj-Fw-ukP"/>
+                            <constraint firstItem="L6W-zf-045" firstAttribute="top" secondItem="Uc9-1v-Tr8" secondAttribute="bottom" constant="25" id="8y2-aA-9qi"/>
+                            <constraint firstItem="zth-ud-16m" firstAttribute="bottom" secondItem="QFm-tv-ekh" secondAttribute="bottom" id="ECE-PM-zsE"/>
+                            <constraint firstItem="zth-ud-16m" firstAttribute="bottom" secondItem="mL8-gn-wfU" secondAttribute="bottom" id="LJs-Wq-2wh"/>
+                            <constraint firstItem="L6W-zf-045" firstAttribute="leading" secondItem="mL8-gn-wfU" secondAttribute="trailing" constant="0.11336032388771855" id="Rlg-yq-O13"/>
+                            <constraint firstItem="QFm-tv-ekh" firstAttribute="leading" secondItem="zth-ud-16m" secondAttribute="leading" constant="15" id="Sfa-3D-Pna"/>
+                            <constraint firstItem="zth-ud-16m" firstAttribute="bottom" secondItem="L6W-zf-045" secondAttribute="bottom" id="T3f-Mj-Hxm"/>
+                            <constraint firstItem="zth-ud-16m" firstAttribute="trailing" secondItem="L6W-zf-045" secondAttribute="trailing" constant="15" id="Tsy-Z6-itF"/>
+                            <constraint firstItem="QFm-tv-ekh" firstAttribute="top" secondItem="Uc9-1v-Tr8" secondAttribute="bottom" constant="25" id="ZHD-9X-z30"/>
+                            <constraint firstItem="Uc9-1v-Tr8" firstAttribute="leading" secondItem="zth-ud-16m" secondAttribute="leading" constant="20" id="j6k-2Q-Qkl"/>
+                            <constraint firstItem="zth-ud-16m" firstAttribute="trailing" secondItem="Uc9-1v-Tr8" secondAttribute="trailing" constant="20" id="jJa-La-ocx"/>
+                            <constraint firstItem="zth-ud-16m" firstAttribute="bottom" secondItem="Uc9-1v-Tr8" secondAttribute="bottom" constant="75" id="pfz-Lg-Jy8"/>
+                            <constraint firstItem="Uc9-1v-Tr8" firstAttribute="top" secondItem="zth-ud-16m" secondAttribute="top" constant="106" id="zDJ-PC-r69"/>
+                            <constraint firstItem="mL8-gn-wfU" firstAttribute="top" secondItem="Uc9-1v-Tr8" secondAttribute="bottom" constant="25" id="zeG-KG-McF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="finishedButton" destination="QFm-tv-ekh" id="N0h-wz-zAJ"/>
+                        <outlet property="fixtureTableView" destination="Uc9-1v-Tr8" id="D5j-JN-YlP"/>
+                        <outlet property="scheduledButton" destination="mL8-gn-wfU" id="aCx-Lk-pmv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4y0-Hb-Mf0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5038" y="-71"/>
+            <point key="canvasLocation" x="5036.9230769230771" y="-71.090047393364927"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1kF-QY-YmK">
