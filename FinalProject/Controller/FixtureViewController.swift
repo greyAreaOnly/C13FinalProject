@@ -13,14 +13,15 @@ class FixtureViewController : UIViewController {
    
     @IBOutlet weak var fixtureTableView: UITableView!
     
-
+    @IBOutlet weak var selectedTab: UILabel!
+    
     @IBOutlet weak var finishedButton: UIButton!
 
     @IBOutlet weak var scheduledButton: UIButton!
     var league = ""
     //MARK: - Variables
     
-    var matches = [Match]() //{ option to use property observer
+    var matches : [Match]? = [Match]() //{ option to use property observer
 //        didSet{
 //            fixtureTableView?.reloadData()
 //        }
@@ -30,6 +31,7 @@ class FixtureViewController : UIViewController {
  //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedTab.text = "Finished"
         fixtureTableView.dataSource = self
         fixtureTableView.register(UINib(nibName: "fixtureTableViewCell", bundle: nil), forCellReuseIdentifier: "fixtureCell")
         
@@ -63,8 +65,8 @@ class FixtureViewController : UIViewController {
                     let matchResult = Match(awayScore: awayScore, homeScore: homeScore, awayTeam: awayTeam, homeTeam: homeTeam, winner: winner, status: status)
                     DispatchQueue.main.async {
                         self.fixtureTableView.reloadData()
-                        self.matches.append(matchResult)
-                        self.fixtureTableView.insertRows(at: [IndexPath(row: self.matches.count-1, section: 0)], with: .fade)
+                        self.matches?.append(matchResult)
+                        self.fixtureTableView.insertRows(at: [IndexPath(row: self.matches!.count-1 , section: 0)], with: .fade)
                         self.fixtureTableView.reloadData()
                     }
 //                    print("Match Array: \(self.matches)")
@@ -91,6 +93,8 @@ class FixtureViewController : UIViewController {
         let status = "FINISHED"
         let todaysFormattedDate = todaysDate.getFormattedDate(format: "yyyy-MM-dd")
         urlFromTable = "https://api.football-data.org/v2/competitions/\(league)/matches?status=\(status)&dateFrom=2021-01-10&dateTo=\(todaysFormattedDate)"
+        selectedTab.text = "Finished"
+        matches?.removeAll()
         getData()
     }
     
@@ -98,10 +102,20 @@ class FixtureViewController : UIViewController {
         let status = "SCHEDULED"
         let todaysFormattedDate = todaysDate.getFormattedDate(format: "yyyy-MM-dd")
         urlFromTable = "https://api.football-data.org/v2/competitions/\(league)/matches?status=\(status)&dateFrom=\(todaysFormattedDate)&dateTo=2021-01-31"
-        matches.removeAll()
+        selectedTab.text = "Scheduled"
+        matches?.removeAll()
         getData()
     }
     
+    @IBAction func liveButtonPressed(_ sender: Any) {
+        let status = "IN_PLAY"
+        let todaysFormattedDate = todaysDate.getFormattedDate(format: "yyyy-MM-dd")
+        urlFromTable = "https://api.football-data.org/v2/competitions/\(league)/matches?status=\(status)&dateFrom=\(todaysFormattedDate)&dateTo=2021-01-31"
+        selectedTab.text = "Live"
+        matches?.removeAll()
+        fixtureTableView.reloadData()
+        getData()
+    }
 }
 
 extension JSON {
@@ -124,11 +138,13 @@ extension JSON {
 
 extension FixtureViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.matches.count
+        return self.matches?.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = fixtureTableView.dequeueReusableCell(withIdentifier: "fixtureCell", for: indexPath) as! fixtureTableViewCell
-        cell.configure(with: self.matches[indexPath.row])
+        if (matches?.isEmpty != true) {
+            cell.configure(with: (self.matches?[indexPath.row])!)
+        }
         return cell
         }
     }
