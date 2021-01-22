@@ -12,32 +12,40 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="leagueCell" rowHeight="80" id="KGk-i7-Jjw" customClass="leagueTableViewCell" customModule="FinalProject" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6e-hH-bzx">
-                        <rect key="frame" x="5" y="5" width="310" height="75"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="r68-P3-HXZ"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="100" y="5" width="215" height="70"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yv3-QG-cGN">
+                        <rect key="frame" x="5" y="5" width="90" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="XcA-Xs-8BU"/>
+                            <constraint firstAttribute="width" constant="90" id="Xy1-yn-HOF"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Yv3-QG-cGN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="3CB-kq-Se3"/>
                     <constraint firstAttribute="trailing" secondItem="o6e-hH-bzx" secondAttribute="trailing" constant="5" id="3uZ-xx-I9u"/>
                     <constraint firstItem="o6e-hH-bzx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Ha9-Bu-MSk"/>
+                    <constraint firstItem="o6e-hH-bzx" firstAttribute="leading" secondItem="Yv3-QG-cGN" secondAttribute="trailing" constant="5" id="LvM-6p-7oO"/>
                     <constraint firstAttribute="bottom" secondItem="o6e-hH-bzx" secondAttribute="bottom" constant="5" id="bnt-F2-XFC"/>
-                    <constraint firstItem="o6e-hH-bzx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="iWH-Cu-Zyd"/>
+                    <constraint firstAttribute="bottom" secondItem="Yv3-QG-cGN" secondAttribute="bottom" constant="5" id="fzd-dr-X41"/>
+                    <constraint firstItem="Yv3-QG-cGN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="wEq-xh-0vk"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="leagueImage" destination="Yv3-QG-cGN" id="ZnI-Tq-GBw"/>
                 <outlet property="leagueName" destination="o6e-hH-bzx" id="flT-09-pFK"/>
             </connections>
-            <point key="canvasLocation" x="134.78260869565219" y="56.919642857142854"/>
+            <point key="canvasLocation" x="176.81159420289856" y="26.785714285714285"/>
         </tableViewCell>
     </objects>
 </document>

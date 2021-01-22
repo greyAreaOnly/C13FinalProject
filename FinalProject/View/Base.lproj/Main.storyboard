@@ -255,12 +255,21 @@
                                 <rect key="frame" x="60" y="188" width="270" height="522"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27a-PT-fPn">
+                                <rect key="frame" x="100" y="122" width="190" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XcS-T9-tQb"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
+                            <constraint firstItem="27a-PT-fPn" firstAttribute="leading" secondItem="XcS-T9-tQb" secondAttribute="leading" constant="100" id="8WW-qE-Bus"/>
+                            <constraint firstItem="XcS-T9-tQb" firstAttribute="trailing" secondItem="27a-PT-fPn" secondAttribute="trailing" constant="100" id="Fh4-2V-wEa"/>
                             <constraint firstItem="LLh-KA-rjj" firstAttribute="top" secondItem="XcS-T9-tQb" secondAttribute="top" constant="100" id="Hvk-vc-W8E"/>
                             <constraint firstItem="XcS-T9-tQb" firstAttribute="bottom" secondItem="LLh-KA-rjj" secondAttribute="bottom" constant="100" id="KHH-HY-Gia"/>
+                            <constraint firstItem="LLh-KA-rjj" firstAttribute="top" secondItem="27a-PT-fPn" secondAttribute="bottom" constant="30" id="NdA-ih-7am"/>
                             <constraint firstItem="XcS-T9-tQb" firstAttribute="trailing" secondItem="LLh-KA-rjj" secondAttribute="trailing" constant="60" id="Onn-iU-yQF"/>
                             <constraint firstItem="LLh-KA-rjj" firstAttribute="leading" secondItem="XcS-T9-tQb" secondAttribute="leading" constant="60" id="ZRO-a0-dJD"/>
                         </constraints>
@@ -268,6 +277,7 @@
                     <navigationItem key="navigationItem" id="0y6-zK-qU9"/>
                     <connections>
                         <outlet property="leagueTableView" destination="LLh-KA-rjj" id="4j6-yR-UaK"/>
+                        <outlet property="tableTitle" destination="27a-PT-fPn" id="6N9-5H-GDR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jpy-HA-aEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -319,6 +329,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="bxU-yN-ZFu"/>
                                 </constraints>
                                 <state key="normal" title="Scheduled"/>
+                                <connections>
+                                    <action selector="scheduledButtonPressed:" destination="C5w-82-Ibe" eventType="touchUpInside" id="blf-0l-blK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zth-ud-16m"/>
