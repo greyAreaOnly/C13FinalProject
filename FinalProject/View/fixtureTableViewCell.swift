@@ -8,11 +8,8 @@
 import UIKit
 
 class fixtureTableViewCell: UITableViewCell {
-
-    
     @IBOutlet weak var homeTeam: UILabel!
     @IBOutlet weak var homeScore: UILabel!
-    
     @IBOutlet weak var awayTeam: UILabel!
     @IBOutlet weak var awayScore: UILabel!
     
@@ -33,6 +30,7 @@ class fixtureTableViewCell: UITableViewCell {
         self.homeScore.text = String(match.homeScore)
         self.awayTeam.text = match.awayTeam
         self.awayScore.text = String(match.awayScore)
+    
     }
     
 }

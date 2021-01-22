@@ -13,15 +13,23 @@ class FixtureViewController : UIViewController {
    
     @IBOutlet weak var fixtureTableView: UITableView!
     
+    @IBOutlet weak var leagueName: UILabel!
     //MARK: - Variables
-    var matches = [Match]()
+    
+    var matches = [Match]() //{
+//        didSet{
+//            fixtureTableView?.reloadData()
+//        }
+//    }
     var urlFromTable = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
         fixtureTableView.dataSource = self
         fixtureTableView.register(UINib(nibName: "fixtureTableViewCell", bundle: nil), forCellReuseIdentifier: "fixtureCell")
+        
+        getData()
+
     }
     
     func getData() {
@@ -44,24 +52,27 @@ class FixtureViewController : UIViewController {
                     let homeScore = match.1["score"]["fullTime"]["homeTeam"].intValue
                     let winner = match.1["score"]["winner"].stringValue
                     let status = match.1["status"].stringValue
-                    //let crestURL = match.1["crestUrl"]
+                    let crestURL = match.1["crestUrl"]
                     let matchResult = Match(awayScore: awayScore, homeScore: homeScore, awayTeam: awayTeam, homeTeam: homeTeam, winner: winner, status: status)
-                    self.matches.append(matchResult)
-                    print("\(matchResult.awayTeam)")
-                    print("\(awayScore)")
-                    print("\(homeTeam)")
-                    print("\(homeScore)")
-                    print("\(winner)")
-                    print("\(status)")
-                    print(matchResult)
-                    //print("\(crestURL)")
+                    DispatchQueue.main.async {
+                        self.matches.append(matchResult)
+                        self.fixtureTableView.insertRows(at: [IndexPath(row: self.matches.count-1, section: 0)], with: .fade)
                     }
-                //print(matchday)
+//                    print("Match Array: \(self.matches)")
+//                    print("\(matchResult.awayTeam)")
+//                    print("\(awayScore)")
+//                    print("\(homeTeam)")
+//                    print("\(homeScore)")
+//                    print("\(winner)")
+//                    print("\(status)")
+                    print(matchResult)
+//                    print("\(crestURL)")
+                    }
+//                print(matchday)
                 }
         }
         task.resume()
     }
-
 }
 
 extension JSON {
@@ -84,6 +95,9 @@ extension JSON {
 
 extension FixtureViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        print(self.matches)
+        print("******fixture count : \(matches.count)")
+
         return self.matches.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
