@@ -11,25 +11,22 @@ import Firebase
 
 class LoginViewController: UIViewController {
     
-    
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        //titleLabel.text = "⚡️FlashChat"
-//        titleLabel.text = ""
-//        var charIndex = 0.0
-//        let titleText = K.appName
-//        for leter in titleText {
-////            print(charIndex)
-////            print(leter)
-//            Timer.scheduledTimer(withTimeInterval: 0.2 * charIndex, repeats: false) { (timer) in
-//                self.titleLabel.text?.append(leter)
-//            }
-//            charIndex += 1
-//        }
+        label.text = ""
+        var charIndex = 0.0
+        let labelText = "get latest updates..."
+        for leter in labelText {
+            Timer.scheduledTimer(withTimeInterval: 0.2 * charIndex, repeats: false) { (timer) in
+                self.label.text?.append(leter)
+            }
+            charIndex += 1
+        }
     }
     
     
