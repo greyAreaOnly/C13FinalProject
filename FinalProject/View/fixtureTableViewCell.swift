@@ -32,21 +32,28 @@ class fixtureTableViewCell: UITableViewCell {
         self.awayScore.text = String(match.awayScore)
         
         if match.status == "FINISHED"{
-            if match.winner == "HOME_TEAM"{
+//            if match.winner == "HOME_TEAM"{
+            if match.homeScore > match.awayScore{
                 self.homeTeam.backgroundColor = UIColor.systemGreen
+                self.awayTeam.backgroundColor = UIColor.white
             }
-            else if match.winner == "AWAY_TEAM"{
+//            else if match.winner == "AWAY_TEAM"{
+            else if match.homeScore < match.awayScore{
                 self.awayTeam.backgroundColor = UIColor.systemGreen
+                self.homeTeam.backgroundColor = UIColor.white
+
             }
-            else{
+//            else if match.winner == "DRAW"{
+            else if match.homeScore == match.awayScore{
+
                 self.homeTeam.backgroundColor = UIColor.systemYellow
                 self.awayTeam.backgroundColor = UIColor.systemYellow
 
             }
         }
-        else{
-            self.homeTeam.backgroundColor = UIColor.systemBackground
-            self.homeTeam.backgroundColor = UIColor.systemBackground
+        else if match.status == "SCHEDULED"{
+            self.homeTeam.backgroundColor = UIColor.white
+            self.awayTeam.backgroundColor = UIColor.white
 
         }
     }
