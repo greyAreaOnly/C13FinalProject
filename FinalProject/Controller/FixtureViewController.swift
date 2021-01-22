@@ -17,6 +17,7 @@ class FixtureViewController : UIViewController {
     @IBOutlet weak var finishedButton: UIButton!
 
     @IBOutlet weak var scheduledButton: UIButton!
+    var league = ""
     //MARK: - Variables
     
     var matches = [Match]() //{ option to use property observer
@@ -25,6 +26,7 @@ class FixtureViewController : UIViewController {
 //        }
 //    }
     var urlFromTable = ""
+    var todaysDate = Date()
  //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +62,10 @@ class FixtureViewController : UIViewController {
 //                    let crestURL = match.1["crestUrl"]
                     let matchResult = Match(awayScore: awayScore, homeScore: homeScore, awayTeam: awayTeam, homeTeam: homeTeam, winner: winner, status: status)
                     DispatchQueue.main.async {
+                        self.fixtureTableView.reloadData()
                         self.matches.append(matchResult)
                         self.fixtureTableView.insertRows(at: [IndexPath(row: self.matches.count-1, section: 0)], with: .fade)
+                        self.fixtureTableView.reloadData()
                     }
 //                    print("Match Array: \(self.matches)")
 //                    print("\(matchResult.awayTeam)")
@@ -82,8 +86,22 @@ class FixtureViewController : UIViewController {
     
     //MARK: - Actions Items
     @IBAction func finishedButtonPressed(_ sender: Any) {
-        
+        //change url
+        // reload table
+        let status = "FINISHED"
+        let todaysFormattedDate = todaysDate.getFormattedDate(format: "yyyy-MM-dd")
+        urlFromTable = "https://api.football-data.org/v2/competitions/\(league)/matches?status=\(status)&dateFrom=2021-01-10&dateTo=\(todaysFormattedDate)"
+        getData()
     }
+    
+    @IBAction func scheduledButtonPressed(_ sender: Any) {
+        let status = "SCHEDULED"
+        let todaysFormattedDate = todaysDate.getFormattedDate(format: "yyyy-MM-dd")
+        urlFromTable = "https://api.football-data.org/v2/competitions/\(league)/matches?status=\(status)&dateFrom=\(todaysFormattedDate)&dateTo=2021-01-31"
+        matches.removeAll()
+        getData()
+    }
+    
 }
 
 extension JSON {
