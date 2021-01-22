@@ -16,7 +16,4 @@ struct Alert {
         vc.present(alert, animated: true, completion: nil)
     }
     
-//    static func showAlertForSignUpVC(on vc: UIViewController) {
-//        showAlert(on: vc, with: "Error", message: <#T##String#>)
-//    }
 }
