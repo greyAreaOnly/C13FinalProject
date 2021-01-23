@@ -18,6 +18,20 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        animateLabel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    private func animateLabel() {
         label.text = ""
         var charIndex = 0.0
         let labelText = "get latest updates..."
@@ -28,7 +42,6 @@ class LoginViewController: UIViewController {
             charIndex += 1
         }
     }
-    
     
     @IBAction func loginPressed(_ sender: UIButton) {
         

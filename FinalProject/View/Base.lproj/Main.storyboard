@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="0cB-NH-nl6" customClass="LoginViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qz7-FG-W0R">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
                             <userLayoutGuide location="16" affinity="minX"/>
@@ -21,7 +21,7 @@
                         </userGuides>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C7W-g7-Pra">
-                                <rect key="frame" x="10" y="206.00000000000003" width="370" height="432.66666666666674"/>
+                                <rect key="frame" x="10" y="118.00000000000003" width="370" height="432.66666666666674"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bzs-Ps-4HT">
                                         <rect key="frame" x="72.666666666666686" y="0.0" width="225" height="250.66666666666666"/>
@@ -141,7 +141,7 @@
             <objects>
                 <viewController id="PcV-cv-8I8" customClass="SignupViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lU0-HL-gc2">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
                             <userLayoutGuide location="16" affinity="minX"/>
@@ -149,7 +149,7 @@
                         </userGuides>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pmm-cM-F0Q">
-                                <rect key="frame" x="10" y="239" width="370" height="366"/>
+                                <rect key="frame" x="10" y="195" width="370" height="366"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="E8K-cd-YC0">
                                         <rect key="frame" x="65" y="0.0" width="240" height="210"/>
@@ -250,11 +250,11 @@
             <objects>
                 <viewController id="rnB-yW-Bz0" customClass="LeagueViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qtO-8u-bxT">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LLh-KA-rjj">
-                                <rect key="frame" x="60" y="188" width="270" height="522"/>
+                                <rect key="frame" x="60" y="100" width="270" height="522"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -293,9 +293,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V82-Mi-3aL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VKh-rP-4qK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="VKh-rP-4qK">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -308,7 +309,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uKy-RG-XDf"/>
+        <segue reference="7sT-Yc-aZH"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="images" width="225" height="225"/>
